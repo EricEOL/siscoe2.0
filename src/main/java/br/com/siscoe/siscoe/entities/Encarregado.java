@@ -3,17 +3,23 @@ package br.com.siscoe.siscoe.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Encarregado {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String login;
+	private String name;
 	
-	private String password;
+	private Cia cia;
 	
-	private List<Role> roles = new ArrayList<Role>();
-	
-	private String cia;
+	private List<Paiol> paiois = new ArrayList<Paiol>();
 
 	public Long getId() {
 		return id;
@@ -23,35 +29,27 @@ public class Encarregado {
 		this.id = id;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getName() {
+		return name;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
-
-	public String getCia() {
+	public Cia getCia() {
 		return cia;
 	}
 
-	public void setCia(String cia) {
+	public void setCia(Cia cia) {
 		this.cia = cia;
+	}
+
+	public List<Paiol> getPaiois() {
+		return paiois;
+	}
+
+	public void setPaiois(List<Paiol> paiois) {
+		this.paiois = paiois;
 	}
 }

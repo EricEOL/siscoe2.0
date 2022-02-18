@@ -1,14 +1,23 @@
 package br.com.siscoe.siscoe.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Paiol {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private int number;
 	
 	private String type;
 	
-	private String cia;
+	private Cia cia;
 	
 	private String length;
 	
@@ -16,6 +25,7 @@ public class Paiol {
 	
 	private String height;
 	
+	@ManyToOne
 	private Encarregado encarregado;
 	
 	private int lastReform;
@@ -48,11 +58,11 @@ public class Paiol {
 		this.type = type;
 	}
 
-	public String getCia() {
+	public Cia getCia() {
 		return cia;
 	}
 
-	public void setCia(String cia) {
+	public void setCia(Cia cia) {
 		this.cia = cia;
 	}
 
