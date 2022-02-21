@@ -19,11 +19,11 @@ public class Paiol {
 	
 	private Cia cia;
 	
-	private String length;
+	private int length;
 	
-	private String width;
+	private int width;
 	
-	private String height;
+	private int height;
 	
 	@ManyToOne
 	private Encarregado encarregado;
@@ -33,6 +33,16 @@ public class Paiol {
 	private int currentOccupation;
 	
 	private String ammunitionType;
+	
+	public Paiol(int number, String type, int length, int width, int height, int currentOccupation) {
+		super();
+		this.number = number;
+		this.type = type;
+		this.length = length;
+		this.width = width;
+		this.height = height;
+		this.currentOccupation = currentOccupation;
+	}
 
 	public Long getId() {
 		return id;
@@ -66,27 +76,27 @@ public class Paiol {
 		this.cia = cia;
 	}
 
-	public String getLength() {
+	public int getLength() {
 		return length;
 	}
 
-	public void setLength(String length) {
+	public void setLength(int length) {
 		this.length = length;
 	}
 
-	public String getWidth() {
+	public int getWidth() {
 		return width;
 	}
 
-	public void setWidth(String width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 
-	public String getHeight() {
+	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(String height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 
