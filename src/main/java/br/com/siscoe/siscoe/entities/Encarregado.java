@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Encarregado {
@@ -19,7 +20,8 @@ public class Encarregado {
 	
 	private Cia cia;
 	
-	private List<Paiol> paiois = new ArrayList<Paiol>();
+	@OneToMany
+	private List<Paiol> paiois = new ArrayList<>();
 
 	public Long getId() {
 		return id;

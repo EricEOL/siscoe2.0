@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
-@Entity
+@Entity(name = "users")
 public class User {
 	
 	@Id
@@ -19,7 +21,8 @@ public class User {
 	
 	private String password;
 	
-	private List<Role> roles = new ArrayList<Role>();
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Role> roles = new ArrayList<>();
 	
 	private Cia cia;
 
