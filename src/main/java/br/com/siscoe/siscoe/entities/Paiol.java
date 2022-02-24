@@ -34,6 +34,8 @@ public class Paiol {
 	
 	private String ammunitionType;
 	
+	public Paiol() {}
+
 	public Paiol(int number, String type, int length, int width, int height, int currentOccupation) {
 		super();
 		this.number = number;

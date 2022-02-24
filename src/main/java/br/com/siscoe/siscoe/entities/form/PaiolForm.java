@@ -1,15 +1,29 @@
-package br.com.siscoe.siscoe.entities.dto;
+package br.com.siscoe.siscoe.entities.form;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import br.com.siscoe.siscoe.entities.Paiol;
 
 public class PaiolForm {
 	
+	@NotNull @NotEmpty
 	private int number;
+	
+	@NotNull @NotEmpty
 	private String type;
+	
+	@NotNull @NotEmpty
 	private int length;
+	
+	@NotNull @NotEmpty
 	private int width;
-	private int height; 
-	private int currentOccupation;
+	
+	@NotNull @NotEmpty
+	private int height;
+	
+	@NotNull @NotEmpty
+	private int currentOccupation = 0;
 	
 	public void setNumber(int number) {
 		this.number = number;
