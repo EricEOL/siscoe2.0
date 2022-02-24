@@ -1,4 +1,4 @@
-package br.com.siscoe.siscoe.entities.form;
+package br.com.siscoe.siscoe.entities.form.paiol;
 
 import br.com.siscoe.siscoe.entities.Cia;
 import br.com.siscoe.siscoe.entities.Encarregado;
@@ -12,7 +12,8 @@ public class UpdatePaiol {
 	private int lastReform;
 	private int currentOccupation;
 	private String ammunitionType;
-	
+
+/*
 	public Cia getCia() {
 		return cia;
 	}
@@ -25,6 +26,7 @@ public class UpdatePaiol {
 	public void setEncarregado(Encarregado encarregado) {
 		this.encarregado = encarregado;
 	}
+*/
 	public int getLastReform() {
 		return lastReform;
 	}
@@ -47,8 +49,8 @@ public class UpdatePaiol {
 		
 		Paiol paiol = paiolRepository.getById(id);
 		
-		paiol.setCia(cia);
-		paiol.setEncarregado(encarregado);
+		//paiol.setCia(cia);
+		//paiol.setEncarregado(encarregado);
 		paiol.setLastReform(lastReform);
 		paiol.setCurrentOccupation(currentOccupation);
 		paiol.setAmmunitionType(ammunitionType);

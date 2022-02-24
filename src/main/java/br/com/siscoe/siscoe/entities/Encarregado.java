@@ -23,6 +23,13 @@ public class Encarregado {
 	@OneToMany
 	private List<Paiol> paiois = new ArrayList<>();
 
+	public Encarregado() {}
+	
+	public Encarregado(String name, Cia cia) {
+		this.name = name;
+		this.cia = cia;
+	}
+
 	public Long getId() {
 		return id;
 	}

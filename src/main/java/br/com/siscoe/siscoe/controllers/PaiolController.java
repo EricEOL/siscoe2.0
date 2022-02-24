@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.siscoe.siscoe.entities.Paiol;
-import br.com.siscoe.siscoe.entities.form.PaiolForm;
-import br.com.siscoe.siscoe.entities.form.UpdatePaiol;
+import br.com.siscoe.siscoe.entities.form.paiol.PaiolForm;
+import br.com.siscoe.siscoe.entities.form.paiol.UpdatePaiol;
 import br.com.siscoe.siscoe.repositories.PaiolRepository;
 
 @RestController

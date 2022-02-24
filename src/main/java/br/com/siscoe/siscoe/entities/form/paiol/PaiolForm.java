@@ -1,4 +1,4 @@
-package br.com.siscoe.siscoe.entities.form;
+package br.com.siscoe.siscoe.entities.form.paiol;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
