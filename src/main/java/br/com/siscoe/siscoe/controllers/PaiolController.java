@@ -6,6 +6,10 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.siscoe.siscoe.entities.Paiol;
@@ -32,10 +37,20 @@ public class PaiolController {
 	
 	@Autowired
 	EncarregadoRepository encarregadoRepository;
-	
+		
 	@GetMapping
-	public List<Paiol> all() {
-		return paiolRepository.findAll(); 
+	public Page<PaiolDTO> list(@RequestParam(required = false) String cia, 
+			@PageableDefault(sort = "number", direction = Direction.ASC, page = 0, size = 10) Pageable pageable) {
+		
+		if(cia == null) {
+			Page<Paiol> paiois = paiolRepository.findAll(pageable);
+			
+			return PaiolDTO.transform(paiois);
+		} else {
+			
+			Page<Paiol> paiois = paiolRepository.findByCia(cia, pageable);
+			return PaiolDTO.transform(paiois);
+		}
 	}
 	
 	@PostMapping

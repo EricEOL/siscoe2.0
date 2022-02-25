@@ -1,5 +1,7 @@
 package br.com.siscoe.siscoe.entities.dto;
 
+import org.springframework.data.domain.Page;
+
 import br.com.siscoe.siscoe.entities.Paiol;
 
 public class PaiolDTO {
@@ -34,7 +36,13 @@ public class PaiolDTO {
 		this.length = paiol.getLength();
 		this.width = paiol.getWidth();
 		this.height = paiol.getHeight();
-		this.encarregadoName = paiol.getEncarregado().getName();
+		
+		if(paiol.getEncarregado() != null) {
+			this.encarregadoName = paiol.getEncarregado().getName();
+		} else {
+			this.encarregadoName = null;
+		}
+		
 		this.lastReform = paiol.getLastReform();
 		this.currentOccupation = paiol.getCurrentOccupation();
 		this.ammunitionType = paiol.getAmmunitionType();
@@ -82,6 +90,10 @@ public class PaiolDTO {
 
 	public String getAmmunitionType() {
 		return ammunitionType;
+	}
+	
+	public static Page<PaiolDTO> transform(Page<Paiol> paiois) {
+		return paiois.map(PaiolDTO::new);
 	}
 	
 }
