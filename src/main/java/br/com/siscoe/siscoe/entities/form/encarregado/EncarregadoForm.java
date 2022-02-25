@@ -1,11 +1,17 @@
 package br.com.siscoe.siscoe.entities.form.encarregado;
 
-import br.com.siscoe.siscoe.entities.Cia;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import br.com.siscoe.siscoe.entities.Encarregado;
 
 public class EncarregadoForm {
+	
+	@NotNull @NotEmpty
 	private String name;
-	private Cia cia;
+	
+	@NotNull @NotEmpty
+	private String cia;
 	
 	public String getName() {
 		return name;

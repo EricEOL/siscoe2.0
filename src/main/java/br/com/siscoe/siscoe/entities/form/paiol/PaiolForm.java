@@ -7,22 +7,22 @@ import br.com.siscoe.siscoe.entities.Paiol;
 
 public class PaiolForm {
 	
-	@NotNull @NotEmpty
+	@NotNull
 	private int number;
 	
 	@NotNull @NotEmpty
 	private String type;
 	
-	@NotNull @NotEmpty
+	@NotNull 
 	private int length;
 	
-	@NotNull @NotEmpty
+	@NotNull
 	private int width;
 	
-	@NotNull @NotEmpty
+	@NotNull 
 	private int height;
 	
-	@NotNull @NotEmpty
+	@NotNull
 	private int currentOccupation = 0;
 	
 	public void setNumber(int number) {

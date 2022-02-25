@@ -17,7 +17,7 @@ public class Paiol {
 	
 	private String type;
 	
-	private Cia cia;
+	private String cia;
 	
 	private int length;
 	
@@ -70,11 +70,11 @@ public class Paiol {
 		this.type = type;
 	}
 
-	public Cia getCia() {
+	public String getCia() {
 		return cia;
 	}
 
-	public void setCia(Cia cia) {
+	public void setCia(String cia) {
 		this.cia = cia;
 	}
 

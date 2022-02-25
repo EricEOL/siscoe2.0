@@ -1,32 +1,44 @@
 package br.com.siscoe.siscoe.entities.form.paiol;
 
-import br.com.siscoe.siscoe.entities.Cia;
+import java.util.Optional;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import br.com.siscoe.siscoe.entities.Encarregado;
 import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.repositories.EncarregadoRepository;
 import br.com.siscoe.siscoe.repositories.PaiolRepository;
 
 public class UpdatePaiol {
 
+	@NotNull @NotEmpty
 	private String cia;
+	
+	@NotNull @NotEmpty
 	private String encarregado;
+	
+	@NotNull @NotEmpty
 	private int lastReform;
+	
+	@NotNull @NotEmpty
 	private int currentOccupation;
+	
+	@NotNull @NotEmpty
 	private String ammunitionType;
 
-/*
-	public Cia getCia() {
+	public String getCia() {
 		return cia;
 	}
-	public void setCia(Cia cia) {
+	public void setCia(String cia) {
 		this.cia = cia;
 	}
-	public Encarregado getEncarregado() {
+	public String getEncarregado() {
 		return encarregado;
 	}
-	public void setEncarregado(Encarregado encarregado) {
+	public void setEncarregado(String encarregado) {
 		this.encarregado = encarregado;
 	}
-*/
 	public int getLastReform() {
 		return lastReform;
 	}
@@ -45,12 +57,17 @@ public class UpdatePaiol {
 	public void setAmmunitionType(String ammunitionType) {
 		this.ammunitionType = ammunitionType;
 	}
-	public Paiol transform(Long id, PaiolRepository paiolRepository) {
+	public Paiol transform(Long id, PaiolRepository paiolRepository, EncarregadoRepository encarregadoRepository) {
 		
 		Paiol paiol = paiolRepository.getById(id);
 		
-		//paiol.setCia(cia);
-		//paiol.setEncarregado(encarregado);
+		Optional<Encarregado> encarregadoFound = encarregadoRepository.findByName(encarregado);
+		
+		if(encarregadoFound.isPresent()) {
+			paiol.setEncarregado(encarregadoFound.get());
+		}
+		
+		paiol.setCia(cia);
 		paiol.setLastReform(lastReform);
 		paiol.setCurrentOccupation(currentOccupation);
 		paiol.setAmmunitionType(ammunitionType);

@@ -18,14 +18,14 @@ public class Encarregado {
 	
 	private String name;
 	
-	private Cia cia;
+	private String cia;
 	
 	@OneToMany
 	private List<Paiol> paiois = new ArrayList<>();
 
 	public Encarregado() {}
 	
-	public Encarregado(String name, Cia cia) {
+	public Encarregado(String name, String cia) {
 		this.name = name;
 		this.cia = cia;
 	}
@@ -46,11 +46,11 @@ public class Encarregado {
 		this.name = name;
 	}
 
-	public Cia getCia() {
+	public String getCia() {
 		return cia;
 	}
 
-	public void setCia(Cia cia) {
+	public void setCia(String cia) {
 		this.cia = cia;
 	}
 

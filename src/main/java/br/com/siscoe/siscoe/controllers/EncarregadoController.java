@@ -1,5 +1,7 @@
 package br.com.siscoe.siscoe.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +21,7 @@ public class EncarregadoController {
 	
 	@PostMapping
 	@Transactional
-	public void add(@RequestBody EncarregadoForm encarregadoForm) {
+	public void add(@RequestBody @Valid EncarregadoForm encarregadoForm) {
 		encarregadoRepository.save(encarregadoForm.transform());
 	}
 	
