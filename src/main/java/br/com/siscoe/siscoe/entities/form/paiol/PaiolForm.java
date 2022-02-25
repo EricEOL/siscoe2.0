@@ -8,7 +8,7 @@ import br.com.siscoe.siscoe.entities.Paiol;
 public class PaiolForm {
 	
 	@NotNull
-	private int number;
+	private String number;
 	
 	@NotNull @NotEmpty
 	private String type;
@@ -25,7 +25,7 @@ public class PaiolForm {
 	@NotNull
 	private int currentOccupation = 0;
 	
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

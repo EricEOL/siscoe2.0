@@ -13,7 +13,7 @@ public class Paiol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private int number;
+	private String number;
 	
 	private String type;
 	
@@ -36,7 +36,7 @@ public class Paiol {
 	
 	public Paiol() {}
 
-	public Paiol(int number, String type, int length, int width, int height, int currentOccupation) {
+	public Paiol(String number, String type, int length, int width, int height, int currentOccupation) {
 		super();
 		this.number = number;
 		this.type = type;
@@ -54,11 +54,11 @@ public class Paiol {
 		this.id = id;
 	}
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

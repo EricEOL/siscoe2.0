@@ -8,7 +8,7 @@ public class PaiolDTO {
 	
 	private Long id;
 	
-	private int number;
+	private String number;
 	
 	private String type;
 	
@@ -52,7 +52,7 @@ public class PaiolDTO {
 		return id;
 	}
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
