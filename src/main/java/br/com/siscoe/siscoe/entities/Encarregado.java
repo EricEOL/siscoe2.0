@@ -20,7 +20,7 @@ public class Encarregado {
 	
 	private String cia;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "encarregado")
 	private List<Paiol> paiois = new ArrayList<>();
 
 	public Encarregado() {}

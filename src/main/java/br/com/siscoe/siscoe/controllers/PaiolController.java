@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.entities.dto.PaiolDTO;
 import br.com.siscoe.siscoe.entities.form.paiol.PaiolForm;
 import br.com.siscoe.siscoe.entities.form.paiol.UpdatePaiol;
 import br.com.siscoe.siscoe.repositories.EncarregadoRepository;
@@ -48,13 +49,13 @@ public class PaiolController {
 	
 	@PutMapping("/{id}")
 	@Transactional
-	public ResponseEntity<Paiol> update(@PathVariable Long id, @RequestBody UpdatePaiol updatePaiol) {
+	public ResponseEntity<PaiolDTO> update(@PathVariable Long id, @RequestBody UpdatePaiol updatePaiol) {
 		
 		Optional<Paiol> paiol = paiolRepository.findById(id);
 		
 		if(paiol.isPresent()) {
 			Paiol paiolUpdated = updatePaiol.transform(id, paiolRepository, encarregadoRepository);
-			return ResponseEntity.ok(paiolUpdated);
+			return ResponseEntity.ok(new PaiolDTO(paiolUpdated));
 		}
 		
 		return ResponseEntity.notFound().build();
