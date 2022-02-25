@@ -1,6 +1,5 @@
 package br.com.siscoe.siscoe.controllers;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -80,8 +79,14 @@ public class PaiolController {
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<Paiol> delete(@PathVariable Long id) {
-		paiolRepository.deleteById(id);
-		return ResponseEntity.ok(null);
 		
+		Optional<Paiol> checkPaiolExists = paiolRepository.findById(id);
+		
+		if(checkPaiolExists.isPresent()) {
+			paiolRepository.deleteById(id);
+			return ResponseEntity.ok(null);
+		}
+		
+		return ResponseEntity.notFound().build();
 	}
 }
