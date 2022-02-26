@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Building {
@@ -17,7 +18,7 @@ public class Building {
 	
 	private String type;
 	
-	private String cia;
+	private String cia = "";
 	
 	private int length;
 	
@@ -28,19 +29,20 @@ public class Building {
 	@ManyToOne
 	private Encarregado encarregado;
 	
-	private int lastReform;
+	private int lastReform = 0;
 	
 	private int currentOccupation;
 	
-	private String ammunitionType;
+	private String ammunitionType = "";
 	
 	private Boolean open = false;
 	
-	private int totalOpenings;
+	private int totalOpenings = 0;
 	
+	@OneToOne
 	private Encarregado lastEncarregoToOpen;
 	
-	private String seal;
+	private String seal = "";
 	
 	public Building() {}
 
