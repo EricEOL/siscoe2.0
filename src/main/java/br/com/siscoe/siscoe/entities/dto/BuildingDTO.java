@@ -2,9 +2,9 @@ package br.com.siscoe.siscoe.entities.dto;
 
 import org.springframework.data.domain.Page;
 
-import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.entities.Building;
 
-public class PaiolDTO {
+public class BuildingDTO {
 	
 	private Long id;
 	
@@ -28,7 +28,7 @@ public class PaiolDTO {
 	
 	private String ammunitionType;
 
-	public PaiolDTO(Paiol paiol) {
+	public BuildingDTO(Building paiol) {
 		this.id = paiol.getId();
 		this.number = paiol.getNumber();
 		this.type = paiol.getType();
@@ -92,7 +92,7 @@ public class PaiolDTO {
 		return ammunitionType;
 	}
 	
-	public static Page<PaiolDTO> transform(Page<Paiol> paiois) {
-		return paiois.map(PaiolDTO::new);
+	public static Page<BuildingDTO> transform(Page<Building> buildings) {
+		return buildings.map(BuildingDTO::new);
 	}
 }

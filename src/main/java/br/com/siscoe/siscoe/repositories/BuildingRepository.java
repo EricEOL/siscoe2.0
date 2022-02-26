@@ -5,11 +5,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.entities.Building;
 
 @Repository
-public interface PaiolRepository extends JpaRepository<Paiol, Long>{
+public interface BuildingRepository extends JpaRepository<Building, Long>{
 
-	Page<Paiol> findByCia(String cia, Pageable pageable);
+	Page<Building> findByCia(String cia, Pageable pageable);
 
 }

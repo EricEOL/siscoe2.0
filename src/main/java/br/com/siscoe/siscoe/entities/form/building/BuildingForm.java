@@ -1,11 +1,11 @@
-package br.com.siscoe.siscoe.entities.form.paiol;
+package br.com.siscoe.siscoe.entities.form.building;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.entities.Building;
 
-public class PaiolForm {
+public class BuildingForm {
 	
 	@NotNull
 	private String number;
@@ -49,8 +49,8 @@ public class PaiolForm {
 		this.currentOccupation = currentOccupation;
 	}
 
-	public Paiol transform() {
-		return new Paiol(number, type, length, width, height, currentOccupation);
+	public Building transform() {
+		return new Building(number, type, length, width, height, currentOccupation);
 	}
 	
 }

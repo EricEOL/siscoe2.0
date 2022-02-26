@@ -21,7 +21,9 @@ public class Encarregado {
 	private String cia;
 	
 	@OneToMany(mappedBy = "encarregado")
-	private List<Paiol> paiois = new ArrayList<>();
+	private List<Building> paiois = new ArrayList<>();
+	
+	private int totalOpenings;
 
 	public Encarregado() {}
 	
@@ -54,11 +56,19 @@ public class Encarregado {
 		this.cia = cia;
 	}
 
-	public List<Paiol> getPaiois() {
+	public List<Building> getPaiois() {
 		return paiois;
 	}
 
-	public void setPaiois(List<Paiol> paiois) {
+	public void setPaiois(List<Building> paiois) {
 		this.paiois = paiois;
+	}
+
+	public int getTotalOpenings() {
+		return totalOpenings;
+	}
+
+	public void setTotalOpenings(int totalOpenings) {
+		this.totalOpenings = totalOpenings;
 	}
 }

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Paiol {
+public class Building {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,9 +34,17 @@ public class Paiol {
 	
 	private String ammunitionType;
 	
-	public Paiol() {}
+	private Boolean open = false;
+	
+	private int totalOpenings;
+	
+	private Encarregado lastEncarregoToOpen;
+	
+	private String seal;
+	
+	public Building() {}
 
-	public Paiol(String number, String type, int length, int width, int height, int currentOccupation) {
+	public Building(String number, String type, int length, int width, int height, int currentOccupation) {
 		super();
 		this.number = number;
 		this.type = type;
@@ -132,5 +140,37 @@ public class Paiol {
 
 	public void setAmmunitionType(String ammunitionType) {
 		this.ammunitionType = ammunitionType;
+	}
+
+	public Boolean getOpen() {
+		return open;
+	}
+
+	public void setOpen(Boolean open) {
+		this.open = open;
+	}
+
+	public int getTotalOpenings() {
+		return totalOpenings;
+	}
+
+	public void setTotalOpenings(int totalOpenings) {
+		this.totalOpenings = totalOpenings;
+	}
+
+	public Encarregado getLastEncarregoToOpen() {
+		return lastEncarregoToOpen;
+	}
+
+	public void setLastEncarregoToOpen(Encarregado lastEncarregoToOpen) {
+		this.lastEncarregoToOpen = lastEncarregoToOpen;
+	}
+
+	public String getSeal() {
+		return seal;
+	}
+
+	public void setSeal(String seal) {
+		this.seal = seal;
 	}
 }

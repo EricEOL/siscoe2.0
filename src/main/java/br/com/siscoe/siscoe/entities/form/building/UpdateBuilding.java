@@ -1,4 +1,4 @@
-package br.com.siscoe.siscoe.entities.form.paiol;
+package br.com.siscoe.siscoe.entities.form.building;
 
 import java.util.Optional;
 
@@ -6,11 +6,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import br.com.siscoe.siscoe.entities.Encarregado;
-import br.com.siscoe.siscoe.entities.Paiol;
+import br.com.siscoe.siscoe.entities.Building;
 import br.com.siscoe.siscoe.repositories.EncarregadoRepository;
-import br.com.siscoe.siscoe.repositories.PaiolRepository;
+import br.com.siscoe.siscoe.repositories.BuildingRepository;
 
-public class UpdatePaiol {
+public class UpdateBuilding {
 
 	@NotNull @NotEmpty
 	private String cia;
@@ -57,9 +57,9 @@ public class UpdatePaiol {
 	public void setAmmunitionType(String ammunitionType) {
 		this.ammunitionType = ammunitionType;
 	}
-	public Paiol transform(Long id, PaiolRepository paiolRepository, EncarregadoRepository encarregadoRepository) {
+	public Building transform(Long id, BuildingRepository paiolRepository, EncarregadoRepository encarregadoRepository) {
 		
-		Paiol paiol = paiolRepository.getById(id);
+		Building paiol = paiolRepository.getById(id);
 		
 		Optional<Encarregado> encarregadoFound = encarregadoRepository.findByName(encarregado);
 		
