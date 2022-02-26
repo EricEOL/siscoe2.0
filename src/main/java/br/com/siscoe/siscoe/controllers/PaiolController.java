@@ -53,6 +53,20 @@ public class PaiolController {
 		}
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<PaiolDTO> paiolById(@PathVariable Long id) {
+		
+		Boolean checkPaiolExists = paiolRepository.existsById(id);
+		
+		if(checkPaiolExists) {
+			Paiol paiol = paiolRepository.getById(id);
+			return ResponseEntity.ok(new PaiolDTO(paiol));
+		}
+		
+		return ResponseEntity.notFound().build();
+		
+	}
+	
 	@PostMapping
 	@Transactional
 	public ResponseEntity<Paiol> add(@RequestBody @Valid PaiolForm paiolForm) {

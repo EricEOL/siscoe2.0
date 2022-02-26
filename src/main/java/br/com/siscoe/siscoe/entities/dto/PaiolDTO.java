@@ -95,5 +95,4 @@ public class PaiolDTO {
 	public static Page<PaiolDTO> transform(Page<Paiol> paiois) {
 		return paiois.map(PaiolDTO::new);
 	}
-	
 }
