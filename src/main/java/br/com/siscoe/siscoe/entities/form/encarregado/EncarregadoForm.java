@@ -3,6 +3,7 @@ package br.com.siscoe.siscoe.entities.form.encarregado;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import br.com.siscoe.siscoe.entities.Cia;
 import br.com.siscoe.siscoe.entities.Encarregado;
 
 public class EncarregadoForm {
@@ -11,7 +12,7 @@ public class EncarregadoForm {
 	private String name;
 	
 	@NotNull @NotEmpty
-	private String cia;
+	private Cia cia;
 	
 	public String getName() {
 		return name;
@@ -19,10 +20,10 @@ public class EncarregadoForm {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCia() {
+	public Cia getCia() {
 		return cia;
 	}
-	public void setCia(String cia) {
+	public void setCia(Cia cia) {
 		this.cia = cia;
 	}
 	

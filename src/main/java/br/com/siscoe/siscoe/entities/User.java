@@ -1,5 +1,9 @@
 package br.com.siscoe.siscoe.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "users")
 public class User {
 	
@@ -23,46 +30,4 @@ public class User {
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Role> roles = new ArrayList<>();
-	
-	private Cia cia;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
-
-	public Cia getCia() {
-		return cia;
-	}
-
-	public void setCia(Cia cia) {
-		this.cia = cia;
-	}
 }
